@@ -1,0 +1,49 @@
+<!-- templates/quotations/request_quotation.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quotation</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Request a Quotation</h1>
+        <form method="post" action="{% url 'request_quotation' %}"> <!-- Adjust the action URL as needed -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service Required:</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="service1">Service 1</option>
+                    <option value="service2">Service 2</option>
+                    <option value="service3">Service 3</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Additional Details:</label>
+                <textarea id="details" name="details" rows="4" placeholder="Provide any additional details here..."></textarea>
+            </div>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+</html>
